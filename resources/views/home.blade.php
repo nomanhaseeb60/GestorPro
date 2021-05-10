@@ -11,7 +11,7 @@
             <div class="col-lg-3 col-sm-4">
                 <div class="small-box bg-gradient-success">
                     <div class="inner">
-                        <h3>44</h3>
+                        <h3>{{$num_clientes}}</h3>
                         <p>Clientes</p>
                     </div>
                     <div class="icon">
@@ -22,7 +22,7 @@
             <div class="col-lg-3 col-sm-4">
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{$num_pro}}</h3>
                         <p>Proyectos</p>
                     </div>
                     <div class="icon">
@@ -33,7 +33,7 @@
             <div class="col-lg-3 col-sm-4">
                 <div class="small-box bg-gradient-lightblue">
                     <div class="inner">
-                        <h3>44</h3>
+                        <h3>{{$empleados}}</h3>
                         <p>Empleados</p>
                     </div>
                     <div class="icon">
@@ -44,7 +44,7 @@
             <div class="col-lg-3 col-sm-4">
                 <div class="small-box bg-gradient-lime">
                     <div class="inner">
-                        <h3>44000€</h3>
+                        <h3>{{($total[0]->total)}}</h3>
                         <p>Ingresos</p>
                     </div>
                     <div class="icon">

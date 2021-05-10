@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6fd087f-0ba3-4b8a-89d5-2b2ecc856699" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/GestorPro.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/departamentos/modificar.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/departamentos/nuevo.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Categorias.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Categorias.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Departamentos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Departamentos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Proyectos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Proyectos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Sprints.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Sprints.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Tareas.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tareas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/auth/login.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +185,7 @@
       <workItem from="1620152768214" duration="16723000" />
       <workItem from="1620507776507" duration="11157000" />
       <workItem from="1620569121324" duration="15014000" />
-      <workItem from="1620643189813" duration="17916000" />
+      <workItem from="1620643189813" duration="23199000" />
     </task>
     <servers />
   </component>

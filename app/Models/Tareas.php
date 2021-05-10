@@ -11,7 +11,6 @@ class Tareas extends Model
 
     protected $table = 'tareas';
     protected $primaryKey = 'id_tarea';
-    public $timestamps = false;
 
     protected $fillable = [
         'nombre',

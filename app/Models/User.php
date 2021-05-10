@@ -14,7 +14,6 @@ class  User extends Authenticatable
 
     protected $table = 'empleados';
     protected $primaryKey = 'id_empleado';
-    public $timestamps = false;
 
 
     /**

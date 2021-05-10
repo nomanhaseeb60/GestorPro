@@ -12,7 +12,6 @@ class Proyectos extends Model
     //Configuracion Modelo
     protected $table = 'proyectos';
     protected $primaryKey = 'id_proyecto';
-    public $timestamps = false;
 
     /**
      * Fillable

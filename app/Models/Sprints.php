@@ -12,7 +12,6 @@ class Sprints extends Model
     //Configuracion Modelo
     protected $table = 'sprints';
     protected $primaryKey = 'id_sprint';
-    public $timestamps = false;
 
     /**
      * Fillable

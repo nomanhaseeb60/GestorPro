@@ -11,7 +11,6 @@ class Departamentos extends Model
     //Configuracion Modelo
     protected $table = 'departamentos';
     protected $primaryKey = 'dept_id';
-    public $timestamps = false;
     /**
      * Fillable
      */

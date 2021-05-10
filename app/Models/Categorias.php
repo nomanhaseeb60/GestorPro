@@ -11,7 +11,6 @@ class Categorias extends Model
     //Configuracion Modelo
     protected $table = 'categorias';
     protected $primaryKey = 'id_categoria';
-    public $timestamps = false;
 
     /**
      * Fillable
