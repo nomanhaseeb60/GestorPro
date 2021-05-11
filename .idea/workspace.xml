@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:RepGestorPro" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e6fd087f-0ba3-4b8a-89d5-2b2ecc856699" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Categorias.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Categorias.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Departamentos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Departamentos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Proyectos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Proyectos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Sprints.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Sprints.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Tareas.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tareas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,14 +194,32 @@
       <workItem from="1620152768214" duration="16723000" />
       <workItem from="1620507776507" duration="11157000" />
       <workItem from="1620569121324" duration="15014000" />
-      <workItem from="1620643189813" duration="23199000" />
+      <workItem from="1620643189813" duration="24714000" />
+      <workItem from="1620742164482" duration="1901000" />
+      <workItem from="1620744133075" duration="33000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="532" y="234" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1620742250234">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="532" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1620742250234" />
     <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1620666691740">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
