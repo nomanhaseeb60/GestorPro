@@ -19,4 +19,11 @@ class Departamentos extends Model
         'descripcion'
     ];
 
+    /**
+     * Un empleado puede tener varios departamentos
+     */
+    public function empleados()
+    {
+        return $this->hasMany(User::class,"dept_id","dept_id");
+    }
 }
