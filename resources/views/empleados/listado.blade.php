@@ -17,7 +17,7 @@
                            aria-pressed="true"><i class="fa fa-plus-circle">Alta Empleado</i></a>
                     </div>
                     <!-- /.card-header -->
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                         <table class="table table-bordered">
                             <thead>
                             <tr>

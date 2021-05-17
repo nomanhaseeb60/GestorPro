@@ -23,6 +23,13 @@ class Proyectos extends Model
         'fecha_finalizacion',
         'precio',
         'estado',
-        'carpetaDocumentacion'
+        'carpetaDocumentacion',
+        'id_categoria',
+        'id_cliente'
     ];
+    //Muchos proyectos pueden ser de un cliente
+    public function cliente(){
+        return $this->belongsTo(Clientes::class,'id_cliente','id_cliente');
+    }
+    
 }

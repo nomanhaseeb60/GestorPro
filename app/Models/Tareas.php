@@ -17,7 +17,20 @@ class Tareas extends Model
         'descripcion',
         'fecha_asignacion',
         'fecha_finalizacion',
-        'observacion'
+        'observacion',
+        'id_empleado',
+        'id_sprint'
     ];
+
+    //Un empleado puede tener varias tareas
+    public function empleado()
+    {
+        return $this->hasMany(User::class,'id_empleado','id_empleado');
+    }
+
+    //Varias tareas a un sprint
+    public function sprint(){
+        return $this->belongsTo(Sprints::class,'id_sprint','id_sprint');
+    }
 
 }

@@ -22,6 +22,12 @@ class Sprints extends Model
         'horas',
         'estado',
         'fecha_comienzo',
-        'fecha_finalizacion'
+        'fecha_finalizacion',
+        'id_proyecto'
     ];
+
+    /*Muchos sprints pueden ser de un proyecto*/
+    public function proyecto(){
+        return $this->belongsTo(Proyectos::class,'id_proyecto','id_proyecto');
+    }
 }

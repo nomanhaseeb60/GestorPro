@@ -63,8 +63,7 @@ class EmpleadosController extends Controller
         $empleados = User::all();
         return view("empleados.listado",["msj"=>"El empleado $empleado->nombre se ha dado de alta correctamente","empleados"=>$empleados]);
     }
-    public function show(User $empleado)
-    {
+    public function show(User $empleado){
 
     }
 
@@ -75,10 +74,10 @@ class EmpleadosController extends Controller
      */
     public function edit(User $empleado)
     {
-        $roles = Role::all()->pluck('name');
-        $empleados = User::all()->pluck('nombre');
-        $departamentos = Departamentos::all()->pluck('nombre');
-        return view("empleados.modificar",["roles"=>$roles,"departamentos" => $departamentos,"empleados"=>$empleados,"empleado"=>$empleado]);
+        $roles = DB::table('roles')->select('id','name')->get();
+        $empleados = DB::table('empleados')->select('id_empleado','nombre')->get();
+        $departamentos = Departamentos::all();
+        return view("empleados.modificar",["roles"=>$roles,"departamentos" => $departamentos,"empleados"=>$empleados,"emp"=>$empleado]);
     }
 
     /**
@@ -89,6 +88,31 @@ class EmpleadosController extends Controller
         $empleado->delete();
         $empleados = User::all();
         return view("empleados.listado",["msj"=>"El empleado $empleado->nombre se ha dado de alta correctamente","empleados"=>$empleados]);
+    }
+
+    public function update(User $empleado,Request $request){
+        //Rellanar los datos
+        $empleado->nombre = $request->nombre;
+        $empleado->apellidos = $request->apellidos;
+        $empleado->email = $request->email;
+        $empleado->dni = $request->dni;
+        $empleado->password = Hash::make($request->password);
+        $empleado->fecha_nacimiento = $request->fecha_nacimiento;
+        $empleado->direccion = $request->direccion;
+        $empleado->sueldo = $request->sueldo;
+        $empleado->telefono = $request->telefono;
+        $empleado->ciudad = $request->ciudad;
+        $empleado->dept_id = DB::table('departamentos')
+            ->select('dept_id')->where('nombre',$request->departamento)->pluck('dept_id')[0];
+        $empleado->assignRole("$request->role");
+        $empleado->id_jefe = DB::table('empleados')
+            ->select('id_empleado')->where('nombre',$request->jefe)->pluck('id_empleado')[0];
+        //Guardar en la base de datos
+        $empleado->save();
+        //Devolver la vista con el usuario agregado
+        $empleados = User::all();
+        return view("empleados.listado",["msj"=>"El empleado $empleado->nombre se ha actualizado correctamente","empleados"=>$empleados]);
+
     }
     public function getValidate(): void
     {

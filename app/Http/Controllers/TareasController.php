@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sprints;
 use App\Models\Tareas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class TareasController extends Controller
 {
@@ -12,9 +15,14 @@ class TareasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Sprints $sprint)
     {
-        //
+        //Cargar todas las tareas del sprint
+        //Session del sprint
+        Session::put('sprint',$sprint);
+        $project_id = DB::table('sprints')->where('id_sprint',$sprint->id_sprint)->get('id_proyecto')[0];
+        $tareas = Tareas::all()->where("id_sprint",$sprint->id_sprint);
+        return view("tareas.listado",["tareas"=>$tareas,"sprint"=>$sprint,"id"=>$project_id]);
     }
 
     /**
@@ -24,7 +32,8 @@ class TareasController extends Controller
      */
     public function create()
     {
-        //
+        //Devovler la vista para crear una tarea
+
     }
 
     /**

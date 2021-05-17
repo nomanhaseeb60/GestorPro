@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Proyectos;
 use App\Models\Sprints;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class SprintsController extends Controller
 {
@@ -12,9 +15,12 @@ class SprintsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Proyectos $proyecto)
     {
-        //
+        //Guardar en la session el proyecto
+        Session::put('project',$proyecto);
+        $sprints = Sprints::all()->where('id_proyecto',"$proyecto->id_proyecto");
+        return view("sprints.listado",["sprints"=>$sprints,"proyecto"=>$proyecto]);
     }
 
     /**
@@ -24,7 +30,9 @@ class SprintsController extends Controller
      */
     public function create()
     {
-        //
+        //devolver la vista
+        $project_id = Session::get('project')->id_proyecto;
+        return view("sprints.nuevo",["id"=>$project_id]);
     }
 
     /**
@@ -35,7 +43,22 @@ class SprintsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Validar el sprint
+        $this->getValidate();
+        //guardar el sprint
+        $sprint = new Sprints();
+        $sprint->nombre = $request->nombre;
+        $sprint->descripcion = $request->descripcion;
+        $sprint->horas = $request->horas;
+        $sprint->estado = 0;
+        $sprint->fecha_comienzo = $request->fecha_comienzo;
+        $sprint->fecha_finalizacion = $request->fecha_finalizacion;
+        $proyecto = Session::get('project');
+        $sprint->id_proyecto = $proyecto->id_proyecto;
+        //guardar en la base de datos
+        $sprint->save();
+        $sprints = Sprints::all()->where('id_proyecto',"$proyecto->id_proyecto");
+        return view("sprints.listado",["sprints"=>$sprints,"proyecto"=>$proyecto,"msj"=>"El sprint $sprint->nombre se ha creado."]);
     }
 
     /**
@@ -52,12 +75,13 @@ class SprintsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Sprints  $sprints
+     * @param  \App\Models\Sprints  $sprint
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sprints $sprints)
+    public function edit(Sprints $sprint)
     {
-        //
+        $project_id = Session::get('project')->id_proyecto;
+        return view("sprints.edit",["id"=>$project_id,"sprint"=>$sprint]);
     }
 
     /**
@@ -67,9 +91,23 @@ class SprintsController extends Controller
      * @param  \App\Models\Sprints  $sprints
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sprints $sprints)
+    public function update(Request $request, Sprints $sprint)
     {
-        //
+        //Validar el sprint
+        $this->getValidate();
+        $sprint->nombre = $request->nombre;
+        $sprint->descripcion = $request->descripcion;
+        $sprint->horas = $request->horas;
+        $sprint->estado = $request->estado;
+        $sprint->fecha_comienzo = $request->fecha_comienzo;
+        $sprint->fecha_finalizacion = $request->fecha_finalizacion;
+        $proyecto = Session::get('project');
+        $sprint->id_proyecto = $proyecto->id_proyecto;
+        //guardar en la base de datos
+        $sprint->save();
+        $proyecto = Session::get('project');
+        $sprints = Sprints::all()->where('id_proyecto',"$proyecto->id_proyecto");
+        return view("sprints.listado",["sprints"=>$sprints,"proyecto"=>$proyecto,"msj"=>"El sprint $sprint->nombre se ha actualizado correctamente"]);
     }
 
     /**
@@ -78,8 +116,32 @@ class SprintsController extends Controller
      * @param  \App\Models\Sprints  $sprints
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sprints $sprints)
+    public function destroy(Sprints $sprint)
     {
-        //
+        //Borrar un sprint de un proyecto
+        $sprint->delete();
+        $proyecto = Session::get('project');
+        $sprints = Sprints::all()->where('id_proyecto',"$proyecto->id_proyecto");
+        return view("sprints.listado",["sprints"=>$sprints,"proyecto"=>$proyecto,"msj"=>"El sprint $sprint->nombre se ha borrado correctamente"]);
     }
+
+    /**
+     * Validar los datos del sprint
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function getValidate(): void
+    {
+        $this->validate(request(), [
+            'nombre' => array('required'),
+            'descripcion' => array('required'),
+            'fecha_comienzo' => array('required'),
+            'fecha_finalizacion' => array('after_or_equal:fecha_inicio'),
+            'horas' => array('required')
+        ], $messages = [
+            'required' => 'El :attribute es obligatorio',
+            'unique' => 'El sprint no se puede repitir',
+            'after_or_equal'=>'La fecha finalizacion debe ser posterior a la fecha inicial.'
+        ]);
+    }
+
 }

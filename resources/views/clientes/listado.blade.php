@@ -17,7 +17,7 @@
                         <a href="{{route("clientes.create")}}" class="btn btn-primary" role="button" aria-pressed="true"><i class="fa fa-plus-circle">Alta Cliente</i></a>
                     </div>
                     <!-- /.card-header -->
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                         <table class="table table-bordered">
                             <thead>
                             <tr>
