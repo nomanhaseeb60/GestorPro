@@ -26,6 +26,7 @@ class TareasFactory extends Factory
             'nombre' => 'Tarea crear base de datos',
             'descripcion' => 'Esta tarea consiste en crear la base de datos',
             'fecha_asignacion' => Carbon::create('2020','12','12'),
+            'estado'=>1,
             'id_sprint' => 1,
             'id_empleado' => 1
         ];

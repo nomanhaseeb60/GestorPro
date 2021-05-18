@@ -53,7 +53,7 @@ class CreateProyectosTable extends Migration
 
             //clave foraneas
             $table->unsignedBigInteger('id_proyecto');
-            $table->foreign('id_proyecto')->references('id_proyecto')->on('proyectos');
+            $table->foreign('id_proyecto')->references('id_proyecto')->on('proyectos')->onDelete('cascade');
         });
 
         /*Tabla reuniones*/
@@ -66,7 +66,7 @@ class CreateProyectosTable extends Migration
 
             //clave foraneas
             $table->unsignedBigInteger('id_sprint');
-            $table->foreign('id_sprint')->references('id_sprint')->on('sprints');
+            $table->foreign('id_sprint')->references('id_sprint')->on('sprints')->onDelete('cascade');
         });
 
         /*Tabla tareas*/
@@ -75,13 +75,14 @@ class CreateProyectosTable extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->date('fecha_asignacion');
+            $table->tinyInteger('estado');
             $table->string('fecha_finalizacion')->nullable();
             $table->string('observacion')->nullable();
             $table->timestamps();
 
             //clave foraneas
             $table->unsignedBigInteger('id_sprint');
-            $table->foreign('id_sprint')->references('id_sprint')->on('sprints');
+            $table->foreign('id_sprint')->references('id_sprint')->on('sprints')->onDelete('cascade');
             $table->unsignedBigInteger('id_empleado');
             $table->foreign('id_empleado')->references('id_empleado')->on('empleados');
         });

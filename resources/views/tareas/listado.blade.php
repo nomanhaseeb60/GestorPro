@@ -27,11 +27,12 @@
                             <th>Descripcion</th>
                             <th>Fecha asignacion</th>
                             <th>Fecha finalizacion</th>
-                            <th>observacion</th>
+                            <th>Observacion</th>
+                            <th>Estado</th>
                             <th>Empleado</th>
                             <th>Dni</th>
                             <th>Editar</th>
-                            <th>Borrar</th>
+                            <th>orrar</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -48,12 +49,17 @@
                                         {{$tarea->observacion}}
                                     @endif
                                 </td>
+                                <td>@if($tarea->estado == 1)
+                                        <span class="badge badge-pill badge-success">Finalizado</span>
+                                    @else
+                                        <span class="badge badge-pill badge-info">En ejecución</span>
+                                    @endif</td>
                                 <td>{{$tarea->empleado[0]->nombre}}</td>
                                 <td>{{$tarea->empleado[0]->dni}}</td>
-                                <td><a href="" class="btn btn-primary"
+                                <td><a href="{{route("tareas.edit",["tarea"=>$tarea])}}" class="btn btn-primary"
                                        role="button" aria-pressed="true"><i class="fa fa-edit"></i></a></td>
                                 <td>
-                                    <form action="" method="post">
+                                    <form action="{{route("tareas.destroy",["tarea"=>$tarea])}}" method="post">
                                         @method("DELETE")
                                         <button type="submit" class="btn btn-primary"><i class="fa fa-trash"></i>
                                         </button>

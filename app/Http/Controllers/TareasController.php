@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Sprints;
 use App\Models\Tareas;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -33,7 +34,10 @@ class TareasController extends Controller
     public function create()
     {
         //Devovler la vista para crear una tarea
-
+        //Sacar todos los empleados para listar
+        $empleados = User::with('roles')->get();
+        $sprint = Session::get('sprint');
+        return view("tareas.create",["empleados"=>$empleados,"sprint"=>$sprint]);
     }
 
     /**
@@ -44,7 +48,24 @@ class TareasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sprint = Session::get('sprint');
+        //Validar los datos que llegan por los request
+        $this->validar();
+        //Guardar y validar el request que me viene
+        $tarea = new Tareas();
+        //Guardar en la base de datos
+        $tarea->nombre = $request->nombre;
+        $tarea->descripcion = $request->descripcion;
+        $tarea->fecha_asignacion = $request->fecha_comienzo;
+        $tarea->id_empleado = $request->empleado;
+        $tarea->id_sprint = $sprint->id_sprint;
+        //Por defecto la tarea   se crea en ejecución
+        $tarea->estado =0;
+        //guardar
+        $tarea->saveOrFail();
+        $project_id = DB::table('sprints')->where('id_sprint',$sprint->id_sprint)->get('id_proyecto')[0];
+        $tareas = Tareas::all()->where("id_sprint",$sprint->id_sprint);
+        return view("tareas.listado",["tareas"=>$tareas,"sprint"=>$sprint,"id"=>$project_id,"msj"=>"La tarea $tarea->nombre se ha creado."]);
     }
 
     /**
@@ -61,12 +82,16 @@ class TareasController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Tareas  $tareas
+     * @param  \App\Models\Tareas  $tarea
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tareas $tareas)
+    public function edit(Tareas $tarea)
     {
-        //
+        //Mandar el formulario para editar la tarea
+        $sprint = Session::get('sprint');
+        $empleados = User::with('roles')->get();
+        $project_id = DB::table('sprints')->where('id_sprint',$sprint->id_sprint)->get('id_proyecto')[0];
+        return view("tareas.edit",["sprint"=>$sprint,"id"=>$project_id,"tarea"=>$tarea,"empleados"=>$empleados]);
     }
 
     /**
@@ -76,9 +101,24 @@ class TareasController extends Controller
      * @param  \App\Models\Tareas  $tareas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tareas $tareas)
+    public function update(Request $request, Tareas $tarea)
     {
-        //
+        $sprint = Session::get('sprint');
+        //Validar los datos que llegan por los request
+        $this->getValidateUpdate();
+        //Guardar en la base de datos
+        $tarea->nombre = $request->nombre;
+        $tarea->descripcion = $request->descripcion;
+        $tarea->fecha_asignacion = $request->fecha_comienzo;
+        $tarea->id_empleado = $request->empleado;
+        $tarea->id_sprint = $sprint->id_sprint;
+        //Por defecto la tarea   se crea en ejecución
+        $tarea->estado = $request->estado;
+        //guardar en la base de datos
+        $tarea->saveOrFail();
+        $project_id = DB::table('sprints')->where('id_sprint',$sprint->id_sprint)->get('id_proyecto')[0];
+        $tareas = Tareas::all()->where("id_sprint",$sprint->id_sprint);
+        return view("tareas.listado",["tareas"=>$tareas,"sprint"=>$sprint,"id"=>$project_id,"msj"=>"La tarea $tarea->nombre se ha actualizado."]);
     }
 
     /**
@@ -87,8 +127,41 @@ class TareasController extends Controller
      * @param  \App\Models\Tareas  $tareas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tareas $tareas)
+    public function destroy(Tareas $tarea)
     {
-        //
+        $sprint = Session::get('sprint');
+        //Borrar la tarea creada
+        $tarea->delete();
+        $project_id = DB::table('sprints')->where('id_sprint',$sprint->id_sprint)->get('id_proyecto')[0];
+        $tareas = Tareas::all()->where("id_sprint",$sprint->id_sprint);
+        return view("tareas.listado",["tareas"=>$tareas,"sprint"=>$sprint,"id"=>$project_id,"msj"=>"La tarea $tarea->nombre se ha borrado."]);
+    }
+
+    /**
+     * Validar las tareas
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function validar(){
+        $this->validate(request(), [
+            'nombre' => array('required'),
+            'descripcion' => array('required'),
+            'fecha_comienzo' => array('required'),
+            'empleado' => array('required')
+        ], $messages = [
+            'required' => 'El :attribute es obligatorio'
+        ]);
+    }
+
+    public function getValidateUpdate(): void
+    {
+        $this->validate(request(), [
+            'nombre' => array('required'),
+            'descripcion' => array('required'),
+            'fecha_comienzo' => array('required'),
+            'empleado' => array('required'),
+            'estado' => array('required')
+        ], $messages = [
+            'required' => 'El :attribute es obligatorio'
+        ]);
     }
 }

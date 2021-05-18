@@ -42,6 +42,10 @@ Route::delete("sprint/{sprint}", [\App\Http\Controllers\SprintsController::class
 //Ruta para tareas
 Route::get('/tareas/{sprint}',[\App\Http\Controllers\TareasController::class,'index'])->name('tareas.sprint');
 Route::get("tareas/{id}/create", [\App\Http\Controllers\TareasController::class,'create'])->name('tareas.create');
+Route::post("tareas", [\App\Http\Controllers\TareasController::class,'store'])->name('tareas.store');
+Route::get("tareas/{tarea}/edit", [\App\Http\Controllers\TareasController::class,'edit'])->name('tareas.edit');
+Route::put("tareas/{tarea}", [\App\Http\Controllers\TareasController::class,'update'])->name('tareas.update');
+Route::delete("tareas/{tarea}", [\App\Http\Controllers\TareasController::class,'destroy'])->name('tareas.destroy');
 Route::get('/docs/{proyecto}',[\App\Http\Controllers\ProyectosController::class,'obtenerDocs'])->name('docs.proyecto');
 
 

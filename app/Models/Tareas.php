@@ -19,7 +19,8 @@ class Tareas extends Model
         'fecha_finalizacion',
         'observacion',
         'id_empleado',
-        'id_sprint'
+        'id_sprint',
+        'estado'
     ];
 
     //Un empleado puede tener varias tareas
