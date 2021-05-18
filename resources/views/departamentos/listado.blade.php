@@ -15,7 +15,7 @@
                 <div class="card">
                     <div class="card-header">
                         <a href="{{route("departamentos.create")}}" class="btn btn-primary" role="button"
-                           aria-pressed="true"><i class="fa fa-plus-circle">Crear Departamento</i></a>
+                           aria-pressed="true"><i class="fa fa-plus-circle"> Crear Departamento</i></a>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body table-responsive">

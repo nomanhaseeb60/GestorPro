@@ -16,7 +16,7 @@
             <div class="card">
                 <div class="card-header">
                     <a href="{{route("tareas.create",['id'=>$sprint->id_sprint])}}" class="btn btn-primary" role="button"
-                       aria-pressed="true"><i class="fa fa-plus-circle">Crear Tarea</i></a>
+                       aria-pressed="true"><i class="fa fa-plus-circle"> Crear Tarea</i></a>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body table-responsive">

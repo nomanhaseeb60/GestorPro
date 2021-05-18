@@ -14,7 +14,7 @@
             <div class="card">
                 <div class="card-header">
                     <a href="{{route("sprint.create",['id'=>$proyecto->id_proyecto])}}" class="btn btn-primary" role="button"
-                       aria-pressed="true"><i class="fa fa-plus-circle">Crear Sprint</i></a>
+                       aria-pressed="true"><i class="fa fa-plus-circle"> Crear Sprint</i></a>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body table-responsive">

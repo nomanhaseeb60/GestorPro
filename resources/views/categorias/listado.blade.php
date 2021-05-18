@@ -14,7 +14,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{route("categorias.create")}}" class="btn btn-primary" role="button" aria-pressed="true"><i class="fa fa-plus-circle">Crear Categoria</i></a>
+                        <a href="{{route("categorias.create")}}" class="btn btn-primary" role="button" aria-pressed="true"><i class="fa fa-plus-circle"> Crear Categoria</i></a>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body table-responsive">

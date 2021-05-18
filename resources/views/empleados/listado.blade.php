@@ -14,7 +14,7 @@
                 <div class="card">
                     <div class="card-header">
                         <a href="{{route("empleados.create")}}" class="btn btn-primary" role="button"
-                           aria-pressed="true"><i class="fa fa-plus-circle">Alta Empleado</i></a>
+                           aria-pressed="true"><i class="fa fa-plus-circle"> Alta Empleado</i></a>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body table-responsive">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Clientes;
 use App\Models\Proyectos;
+use App\Models\Tareas;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,8 +36,17 @@ class HomeController extends Controller
         $ingresos = DB::table('proyectos')
             ->select(DB::raw('sum(precio) as total'))
             ->get();
+        //Devolver todas las tareas si es programador el que esta autenticado
+        if(Auth::user()->roles[0]->name == "programador"){
+            //total tareas
+            $ctarea = Tareas::all()->where('id_empleado',Auth::user()->id_empleado)->count();
+            $ctarea_ejecucion = Tareas::all()->where('id_empleado',Auth::user()->id_empleado)->where('estado',0)->count();
+            $ctarea_finalizada = Tareas::all()->where('id_empleado',Auth::user()->id_empleado)->where('estado',1)->count();
+            $tareas = Tareas::all()->where('id_empleado',Auth::user()->id_empleado);
+        }
+
         //devolver a la vista
-        return view('home',["num_clientes" => $clientes, "num_pro" => $proyectos, "empleados" => $empleados,"total" => $ingresos]);
+        return view('home',["tarea_finalizadas"=>$ctarea_finalizada,"num_clientes" => $clientes, "num_pro" => $proyectos, "empleados" => $empleados,"total" => $ingresos,"tareas"=>$tareas,"totaltarea"=>$ctarea,"tareas_ejec"=>$ctarea_ejecucion]);
     }
 
     /**
