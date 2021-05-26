@@ -20,16 +20,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6fd087f-0ba3-4b8a-89d5-2b2ecc856699" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/vendor/adminlte/dist/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/reuniones/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/reuniones/editar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/reuniones/listado.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoriasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoriasController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/categorias/listado.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categorias/listado.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/clientes/listado.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clientes/listado.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/departamentos/listado.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/departamentos/listado.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReunionesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReunionesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Proyectos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Proyectos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Reuniones.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Reuniones.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/adminlte.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/adminlte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ReunionesFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ReunionesFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_empleados.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_empleados.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_04_183723_create_proyectos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_04_183723_create_proyectos_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/image/background.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vendor/adminlte/dist/img/AdminLTELogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/categorias/modificar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categorias/modificar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/empleados/listado.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/empleados/listado.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/proyectos/listado.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/proyectos/listado.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/sprints/listado.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sprints/listado.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tareas/listado.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tareas/listado.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +185,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="E:/Heroku-deploy/gestorPro" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/vendor/adminlte/dist/img" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -180,11 +195,25 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\DockerUltimo\GestorPro\public\vendor\adminlte\dist\img" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.ExampleTest">
+    <configuration name="ExampleTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ExampleTest" file="$PROJECT_DIR$/tests/Feature/ExampleTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.ExampleTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -213,7 +242,16 @@
       <workItem from="1621178148593" duration="21600000" />
       <workItem from="1621272970828" duration="21206000" />
       <workItem from="1621364964663" duration="7701000" />
-      <workItem from="1621376013158" duration="2659000" />
+      <workItem from="1621376013158" duration="2757000" />
+      <workItem from="1621380128262" duration="584000" />
+      <workItem from="1621523321548" duration="20386000" />
+      <workItem from="1621695692018" duration="617000" />
+      <workItem from="1621699578350" duration="415000" />
+      <workItem from="1621700126060" duration="1215000" />
+      <workItem from="1621787342174" duration="5610000" />
+      <workItem from="1621896201382" duration="1592000" />
+      <workItem from="1621956423461" duration="1561000" />
+      <workItem from="1622051084641" duration="9760000" />
     </task>
     <servers />
   </component>
@@ -237,10 +275,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="532" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1620742250234" />
-    <state x="499" y="178" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1621290775852">
+    <state x="499" y="178" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1621543805478">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="178" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1621290775852" />
+    <state x="499" y="178" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1621543805478" />
     <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1620774200984" />
     <state x="880" y="151" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1621375349122">
       <screen x="0" y="0" width="1536" height="824" />
@@ -256,24 +294,24 @@
     </state>
     <state x="555" y="148" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1621089204309" />
     <state x="555" y="155" key="NewPhpClassDialog/0.0.1536.864@0.0.1536.864" timestamp="1620573768579" />
-    <state x="845" y="150" key="NewPhpFileDialog" timestamp="1621370419460">
+    <state x="845" y="150" key="NewPhpFileDialog" timestamp="1622057725067">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="845" y="150" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1621370419460" />
+    <state x="845" y="150" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1622057725067" />
     <state x="845" y="157" key="NewPhpFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1620774372609" />
     <state x="971" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1621100845953">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="971" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1621100845953" />
-    <state x="425" y="188" key="run.anything.popup" timestamp="1621377752320">
+    <state x="425" y="188" key="run.anything.popup" timestamp="1622061941064">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="188" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1621377752320" />
+    <state x="425" y="188" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1622061941064" />
     <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1620512178589" />
-    <state x="431" y="173" width="672" height="647" key="search.everywhere.popup" timestamp="1621375328196">
+    <state x="431" y="173" width="672" height="647" key="search.everywhere.popup" timestamp="1621378732012">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="173" width="672" height="647" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1621375328196" />
+    <state x="431" y="173" width="672" height="647" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1621378732012" />
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1620662512531" />
   </component>
   <component name="XDebuggerManager">

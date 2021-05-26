@@ -48,7 +48,7 @@
                                     @endif
                                 </td>
                                 <td><a href="{{route("tareas.sprint",['sprint'=>$sprint])}}"><span class="badge badge-pill badge-info">tareas</span></a></td>
-                                <td><a href=""><span class="badge badge-pill badge-dark">Reuniones</span></a></td>
+                                <td><a href="{{route("reuniones.sprint",['sprint'=>$sprint])}}"><span class="badge badge-pill badge-dark">Reuniones</span></a></td>
                                 <td><a href="{{route("sprint.edit",['sprint'=>$sprint])}}" class="btn btn-primary"
                                        role="button" aria-pressed="true"><i class="fa fa-edit"></i></a></td>
                                 <td>

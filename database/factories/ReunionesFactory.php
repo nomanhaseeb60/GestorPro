@@ -24,6 +24,7 @@ class ReunionesFactory extends Factory
     {
         return [
             //
+            'nombre'=>"Funcionalidad-CU1",
             'fecha' => Carbon::create('2021','02','12'),
             'notas' => '',
             'preguntas' => '',

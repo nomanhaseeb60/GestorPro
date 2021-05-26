@@ -12,14 +12,20 @@ class Reuniones extends Model
     //Configuracion Modelo
     protected $table = 'reuniones';
     protected $primaryKey = 'id_reunion';
-    public $timestamps = false;
 
     /**
      * Fillable
      */
     protected $fillable = [
+        'nombre',
         'fecha',
         'notas',
-        'preguntas'
+        'preguntas',
+        'id_sprint'
     ];
+
+    //Una reunion
+    public function sprint(){
+        $this->belongsToMany('id_sprint', 'reuniones','id_sprint');
+    }
 }

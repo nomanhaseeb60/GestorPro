@@ -45,12 +45,24 @@
                                     <td>{{$empleado->direccion}}</td>
                                     <td>{{$empleado->sueldo}}</td>
                                     <td>{{$empleado->telefono}}</td>
-                                    <td>{{$empleado->departamento->nombre}}</td>
+                                    <td>
+                                    @if(isset($empleado->departamento->nombre))
+                                            {{$empleado->departamento->nombre}}
+                                        @else
+                                            no departamento
+                                        @endif
+                                    </td>
                                     <td>@foreach($empleado["roles"] as $role)
                                             {{$role->name}}
                                         @endforeach
                                     </td>
-                                    <td>{{$empleado->jefe->nombre}}</td>
+                                    <td>
+                                    @if($empleado->jefe->nombre)
+                                        {{$empleado->jefe->nombre}}
+                                        @else
+                                            no jefe
+                                        @endif
+                                    </td>
                                     <td><a href="{{route("empleados.edit",$empleado)}}" class="btn btn-primary"
                                            role="button" aria-pressed="true"><i class="fa fa-edit"></i></a></td>
                                     <td>

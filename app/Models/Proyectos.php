@@ -29,7 +29,7 @@ class Proyectos extends Model
     ];
     //Muchos proyectos pueden ser de un cliente
     public function cliente(){
-        return $this->belongsTo(Clientes::class,'id_cliente','id_cliente');
+        return $this->belongsTo(Clientes::class,'id_cliente','id_cliente','id_cliente');
     }
-    
+
 }

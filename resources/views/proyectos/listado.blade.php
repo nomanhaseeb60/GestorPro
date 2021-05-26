@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 @section('title', 'Dashboard')
 @section('content_header')
-    <h1>Gestión Proyectos</h1>
+    <h1>Reuniones</h1>
 @stop
 @section('content')
     <div class="container-md">
@@ -85,7 +85,12 @@
                                         <span class="badge badge-pill badge-info">En ejecución</span>
                                     @endif
                                 </td>
-                                <td>{{$proyecto->cliente->nombre}}</td>
+                                <td>@if(isset($proyecto->cliente->nombre))
+                                        {{$proyecto->cliente->nombre}}
+                                    @else
+                                        no asignado
+                                    @endif
+                                </td>
                                 <td><a href="{{route("sprint.proyectos",$proyecto)}}"><span class="badge badge-pill badge-info">sprint</span></a></td>
                                 <td><a href="{{route("docs.proyecto",$proyecto)}}"><span class="badge badge-pill badge-info">Docs</span></a></td>
                                 <td><a href="{{route("proyectos.edit",$proyecto)}}" class="btn btn-primary"

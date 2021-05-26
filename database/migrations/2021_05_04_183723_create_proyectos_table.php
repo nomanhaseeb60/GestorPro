@@ -34,10 +34,10 @@ class CreateProyectosTable extends Migration
             $table->timestamps(false);
 
             //clave foraneas
-            $table->unsignedBigInteger('id_cliente');
-            $table->foreign('id_cliente')->references('id_cliente')->on('clientes');
-            $table->unsignedBigInteger('id_categoria');
-            $table->foreign('id_categoria')->references('id_categoria')->on('categorias');
+            $table->unsignedBigInteger('id_cliente')->unsigned()->nullable();
+            $table->foreign('id_cliente')->references('id_cliente')->on('clientes')->onDelete('set null');
+            $table->unsignedBigInteger('id_categoria')->unsigned()->nullable();
+            $table->foreign('id_categoria')->references('id_categoria')->on('categorias')->onDelete('set null');
         });
 
         /*Tabla sprints*/
@@ -59,6 +59,7 @@ class CreateProyectosTable extends Migration
         /*Tabla reuniones*/
         Schema::create('reuniones', function (Blueprint $table) {
             $table->id('id_reunion')->autoIncrement();
+            $table->string('nombre');
             $table->date('fecha');
             $table->string('notas')->nullable();
             $table->string('preguntas')->nullable();

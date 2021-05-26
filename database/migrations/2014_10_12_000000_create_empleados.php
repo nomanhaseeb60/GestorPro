@@ -41,10 +41,10 @@ class CreateEmpleados extends Migration
             $table->rememberToken();
             $table->timestamps();
             //clave foranea
-            $table->unsignedBigInteger('dept_id');
-            $table->foreign('dept_id')->references('dept_id')->on('departamentos');
-            $table->unsignedBigInteger('id_jefe');
-            $table->foreign('id_jefe')->references('id_empleado')->on('empleados');
+            $table->unsignedBigInteger('dept_id')->unsigned()->nullable();
+            $table->foreign('dept_id')->references('dept_id')->on('departamentos')->onDelete('set null');
+            $table->unsignedBigInteger('id_jefe')->unsigned()->nullable();
+            $table->foreign('id_jefe')->references('id_empleado')->on('empleados')->onDelete('set null');
         });
 
         /**
