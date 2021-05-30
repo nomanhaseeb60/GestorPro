@@ -21,6 +21,16 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
 Route::get('/logout', [App\Http\Controllers\HomeController::class, 'logout'])->name('logout');
+
+/**
+ * Las siguientes rutas son para el rol programador.
+ */
+Route::get("tar/{tar}/edit", [\App\Http\Controllers\TareasController::class, 'programador'])->name('tareas.programador')->middleware('auth');
+Route::put("tar/{tar}", [\App\Http\Controllers\TareasController::class, 'modificarTarea'])->name('tareas.modificar')->middleware('auth');
+Route::get("meetings/{tar}", [\App\Http\Controllers\ReunionesController::class, 'reuniones'])->name('meetings')->middleware('auth');
+
+
+
 /**
  * Las siguientes rutas son para el rol administrador.
  */

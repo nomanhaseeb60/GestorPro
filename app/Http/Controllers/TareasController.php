@@ -6,6 +6,7 @@ use App\Models\Sprints;
 use App\Models\Tareas;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
@@ -163,5 +164,38 @@ class TareasController extends Controller
         ], $messages = [
             'required' => 'El :attribute es obligatorio'
         ]);
+    }
+
+    /**
+     * Devolver la vista para editar el estado de las tareas
+     */
+    public function programador(Request $request,Tareas $tarea){
+        $tarea = Tareas::all()->where('id_tarea',$request->tar);
+        return view("programador.editarTarea",["tarea" => $tarea]);
+    }
+
+    /**
+     * Modificar el estado y observacion
+     */
+
+    public function modificarTarea(Request $request,Tareas $tarea){
+        $this->validate(request(), [
+            'observacion' => array('required'),
+            'estado' => array('required')
+        ], $messages = [
+            'required' => 'El :attribute es obligatorio'
+        ]);
+        $tarea = Tareas::find($request->id_tarea);
+        $tarea->observacion = $request->observacion;
+        $tarea->estado = $request->estado;
+        $tarea->fecha_finalizacion = date('Y-m-d');
+        $tarea->save();
+        //guardar en la base de datos
+        $ctarea = Tareas::all()->where('id_empleado',Auth::user()->id_empleado)->count();
+        $ctarea_ejecucion = Tareas::all()->where('id_empleado',Auth::user()->id_empleado)->where('estado',0)->count();
+        $ctarea_finalizada = Tareas::all()->where('id_empleado',Auth::user()->id_empleado)->where('estado',1)->count();
+        $tareas = Tareas::all()->where('id_empleado',Auth::user()->id_empleado);
+        return view("programador.home",["tarea_finalizadas"=>$ctarea_finalizada ?? "","num_clientes" => $clientes ?? "", "num_pro" => $proyectos ?? "", "empleados" => $empleados ?? "","total" => $ingresos ?? "","tareas"=>$tareas?? "","totaltarea"=>$ctarea ?? "","tareas_ejec"=>$ctarea_ejecucion ?? ""]);
+
     }
 }

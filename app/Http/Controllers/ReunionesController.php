@@ -134,4 +134,13 @@ class ReunionesController extends Controller
         ]);
     }
 
+    /**
+     * Mostrar las reuniones de cada sprint
+     */
+    public function reuniones(Request $request){
+        $tarea = Tareas::all()->where('id_tarea',$request->tar);
+        $reuniones = Reuniones::all()->where('sprint_id',$tarea[0]->sprint_id);
+        return view("programador.reuniones",["reuniones"=>$reuniones]);
+    }
+
 }
