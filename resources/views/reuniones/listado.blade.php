@@ -43,6 +43,6 @@
     @endisset
     <a href="{{route("reuniones.create",$sprint)}}" class="btn btn-primary" role="button"
        aria-pressed="true"><i class="fa fa-plus-circle"></i> Agendar Reunión</a>
-    <div id='calendar'></div>
+        <div id='calendar'></div>
 </div>
 @stop

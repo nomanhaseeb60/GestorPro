@@ -20,12 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6fd087f-0ba3-4b8a-89d5-2b2ecc856699" name="Default Changelist" comment="Fallos a corregir, Reuniones y full calendar implementado">
-      <change afterPath="$PROJECT_DIR$/resources/views/programador/editarTarea.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/programador/reuniones.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReunionesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReunionesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TareasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TareasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/reuniones/listado.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reuniones/listado.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,6 +238,8 @@
       <workItem from="1622216342286" duration="2021000" />
       <workItem from="1622231866126" duration="2200000" />
       <workItem from="1622234976210" duration="8985000" />
+      <workItem from="1622381938132" duration="839000" />
+      <workItem from="1622566365076" duration="2562000" />
     </task>
     <task id="LOCAL-00001" summary="Fallos a corregir, Reuniones y full calendar implementado">
       <created>1622062529512</created>

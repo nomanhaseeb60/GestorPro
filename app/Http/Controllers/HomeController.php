@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Clientes;
 use App\Models\Proyectos;
+use App\Models\Reuniones;
 use App\Models\Tareas;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -37,6 +38,7 @@ class HomeController extends Controller
             ->select(DB::raw('sum(precio) as total'))
             ->get();
         $vista = "home";
+        $reuniones = Reuniones::all();
         //Devolver todas las tareas si es programador el que esta autenticado
         if(Auth::user()->roles[0]->name == "programador"){
             //total tareas
@@ -48,7 +50,7 @@ class HomeController extends Controller
         }
 
         //devolver a la vista
-        return view("$vista",["tarea_finalizadas"=>$ctarea_finalizada ?? "","num_clientes" => $clientes ?? "", "num_pro" => $proyectos ?? "", "empleados" => $empleados ?? "","total" => $ingresos ?? "","tareas"=>$tareas?? "","totaltarea"=>$ctarea ?? "","tareas_ejec"=>$ctarea_ejecucion ?? ""]);
+        return view("$vista",["reuniones"=>$reuniones ?? "","tarea_finalizadas"=>$ctarea_finalizada ?? "","num_clientes" => $clientes ?? "", "num_pro" => $proyectos ?? "", "empleados" => $empleados ?? "","total" => $ingresos ?? "","tareas"=>$tareas?? "","totaltarea"=>$ctarea ?? "","tareas_ejec"=>$ctarea_ejecucion ?? ""]);
     }
 
     /**
