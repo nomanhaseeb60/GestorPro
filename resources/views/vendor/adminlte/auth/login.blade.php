@@ -79,5 +79,6 @@
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
         document.body.style.backgroundImage = "url('{{asset("image/background.jpg")}}')";
+        console.log(document.getElementsByClassName("login-logo")[0].getElementsByTagName("a")[0].style = "color:white")
     });
 </script>
