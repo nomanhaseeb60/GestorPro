@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e6fd087f-0ba3-4b8a-89d5-2b2ecc856699" name="Default Changelist" comment="Fallos a corregir, Reuniones y full calendar implementado">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmpleadosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmpleadosController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +163,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="E:/Heroku-deploy/gestorPro" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -240,6 +240,8 @@
       <workItem from="1622381938132" duration="839000" />
       <workItem from="1622566365076" duration="5168000" />
       <workItem from="1622572507125" duration="184000" />
+      <workItem from="1622742094522" duration="701000" />
+      <workItem from="1622745977063" duration="216000" />
     </task>
     <task id="LOCAL-00001" summary="Fallos a corregir, Reuniones y full calendar implementado">
       <created>1622062529512</created>

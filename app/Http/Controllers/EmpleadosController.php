@@ -96,7 +96,7 @@ class EmpleadosController extends Controller
         $empleado->apellidos = $request->apellidos;
         $empleado->email = $request->email;
         $empleado->dni = $request->dni;
-        $empleado->password = Hash::make($request->password);
+        $empleado->password = $empleado->password;
         $empleado->fecha_nacimiento = $request->fecha_nacimiento;
         $empleado->direccion = $request->direccion;
         $empleado->sueldo = $request->sueldo;
